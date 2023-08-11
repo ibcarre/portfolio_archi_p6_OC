@@ -58,6 +58,42 @@ header {
 	justify-content: space-between;
 	margin: 50px 0
 }
+.filtre{
+	display: flex;
+	gap : 10px;
+	align-items: center;
+	justify-content: center;
+}
+
+.bulles{
+	border-radius: 60px;
+	border: 1px solid #1D6154;
+	font-size: 16px;
+	text-align: center; 
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-weight: 700; 
+	color: #1D6154;
+	cursor:pointer;
+}
+
+.bulles_clicked{
+	border-radius: 60px;
+	border: 1px solid #1D6154;
+	font-size: 16px;
+	text-align: center;
+	background: #1D6154;  
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-weight: 700; 
+	color: #FFF; 
+	cursor:pointer;
+}
+
 section {
 	margin: 50px 0
 }
@@ -186,3 +222,78 @@ footer nav ul {
 	margin: 2em
 }
 
+
+a{
+	text-decoration: none;
+}
+
+a:visited{
+	color : black;
+}
+
+a:hover{
+	color: #B1663C;
+}
+
+.login{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top:150px;
+	gap: 30px;
+	margin-bottom: 355px;
+}
+
+.login form{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 30px;
+}
+
+.login p{
+	margin-bottom: 5px;
+	color: #3D3D3D;
+	font-family: Work Sans;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal; 
+}
+
+form input[type="text"], form input[type ="password"]{
+	background: #FFF;
+	box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09); 
+	outline:none;
+	border:none;
+	width: 380px;
+	height: 50px;
+	font-size: 20px;
+	font-family: Work Sans;
+	padding-left: 10px;
+}
+
+form input:focus{
+	outline:solid;
+	outline-width: thin;
+	outline-color: #B1663C;
+}
+
+.boutons{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#connexion{
+	font-size: 14px;
+	margin:0px;
+}
+
+.login a{
+	text-decoration-line: underline; 
+	text-decoration-skip-ink: none;
+}
