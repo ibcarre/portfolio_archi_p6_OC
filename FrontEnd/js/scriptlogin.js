@@ -18,6 +18,9 @@ btn.addEventListener("submit", async function(event) {
     if(response.status == 200){
         console.log("success");
         response = await response.json();
+        console.log(response);
+        document.cookie = "token=" + response["token"] + ";path=/; SameSite=Lax";
+        console.log(document.cookie)
         document.location.href="../assets/index_log.html";
     }
 

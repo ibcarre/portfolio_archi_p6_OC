@@ -1,4 +1,7 @@
 parent = document.querySelector(".gallery");
+if (document.cookie.length != 0){
+    document.location.href="./assets/index_log.html";
+}
 fetch('http://localhost:5678/api/works')
     .then(response => response.json())
     .then(works => {

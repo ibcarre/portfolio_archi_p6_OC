@@ -5,27 +5,33 @@
 	<title>Sophie Bluel - Architecte d'intérieur</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<script src="https://kit.fontawesome.com/a2d22359bb.js" crossorigin="anonymous"></script>
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
+<div class="edit-bar"> 
+	<p><i class="fa-regular fa-pen-to-square" style="color: #feffff;"></i> Mode édition</p>
+	<btn class="publish">publier les changements</btn>
+</div>
+<div class="main-container">
 <header>
-	<a href="./index.html"><h1>Sophie Bluel <span>Architecte d'intérieur</span></h1></a>
+	<a href="./index_log.html"><h1>Sophie Bluel <span>Architecte d'intérieur</span></h1></a>
 	<nav>
 		<ul>
 			<li>projets</li>
 			<li>contact</li>
-			<li><a href="./assets/login.html">login</a></li>
-			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+			<li><a href="./login.html">login</a></li>
+			<li><img src="./icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
 </header>
 <main>
 	<section id="introduction">
 		<figure>
-			<img src="./assets/images/sophie-bluel.png" alt="">
+			<img src="./images/sophie-bluel.png" alt="">
 		</figure>
 		<article>
 			<h2>Designer d'espace</h2>
@@ -35,13 +41,7 @@
 		</article>
 	</section>
 	<section id="portfolio">
-		<h2>Mes Projets</h2>
-		<section class ="filtre">
-			<div class="bulles_clicked" id="tous">Tous</div>
-			<div class="bulles" id="objet">Objets</div>
-			<div class="bulles" id="appt">Appartements</div>
-			<div class="bulles" id="hotel">Hôtels et restaurants</div>
-		</section>
+		<h2>Mes Projets <i class="fa-regular fa-pen-to-square fa-2xs" style="color: #000000;"></i></h2>
 		<div class="gallery">
 			<!-- <figure>
 				<img src="assets/images/abajour-tahina.png" alt="Abajour Tahina">
@@ -111,6 +111,7 @@
 		</ul>
 	</nav>
 </footer>
-<script src="../js/script.js"></script>
+<script src="../js/script_logged.js"></script>
+</div>
 </body>
 </html>
