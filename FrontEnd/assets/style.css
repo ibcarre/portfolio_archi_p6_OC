@@ -142,6 +142,7 @@ li:hover {
 #introduction {
 	display: flex;
 	align-items: center;
+	margin-bottom:130px;
 }
 #introduction figure {
 	flex: 1
@@ -236,6 +237,14 @@ a:visited{
 	color : black;
 }
 
+li a{
+	color : black;
+}
+
+form a {
+	color: #3D3D3D; 
+}
+
 a:hover{
 	color: #B1663C;
 }
@@ -273,7 +282,6 @@ form input[type="text"], form input[type ="password"]{
 	box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09); 
 	outline:none;
 	border:none;
-	width: 380px;
 	height: 50px;
 	font-size: 20px;
 	font-family: Work Sans;
@@ -333,6 +341,305 @@ form input:focus{
 }
 
 h2 i.fa-regular.fa-pen-to-square{
-	padding-left: 31px;
-	padding-bottom: 50px;
+	padding-left: 30px;
+}
+
+#portfolio h2{
+	display: flex;
+	flex-direction: row;
+	text-align: center; 
+	align-items:center;
+	justify-content:center;
+}
+
+#modifier{
+	display: flex;
+	flex-direction: row;
+	text-align: center; 
+	align-items:center;
+	justify-content:center;
+	cursor: pointer;
+}
+
+
+.modifier_txt{
+	display:inline-block;
+	color : black;
+	padding-left: 10px;
+	font-size: 14px;
+	font-family: Work Sans; 
+	font-weight: 400;
+	text-align: center;
+	margin-bottom: 5px;
+
+}
+
+ /* The Modal (background) */
+ .modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 9999; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.30); /* Black w/ opacity */
+  }
+  
+
+  
+  /* Modal Content/Box */
+  .modal-content {
+	background-color: #fefefe;
+	margin: 15% auto; /* 15% from the top and centered */
+	padding: 20px;
+	width: 45%; /* Could be more or less, depending on screen size */
+	max-width: 630px;
+	border-radius: 10px; 
+  }
+  
+  /* The Close Button */
+  .close {
+	color: #000000;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+  } 
+
+  .modal-title{
+	padding-top: 60px;
+	padding-bottom: 45px;
+	color: #000;
+	text-align: center;
+	font-family: Work Sans;
+	font-size: 26px;
+	font-weight: 400;
+  }
+
+#travaux{
+	padding : 80px;
+	padding-top: 0px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items:center;
+	justify-content:center;
+	align-content: flex-start;
+	gap:8px;
+}
+
+#galerie{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items:center;
+	align-content: flex-start;
+	gap:8px;
+}
+
+.mod_img{
+	width: 80px;
+	height: 105px;
+	flex-shrink: 0; 
+	padding-bottom:25px;
+	position: relative;
+  }
+
+.mod_img img{
+
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.line{
+	margin-top:50px;
+	width: 65%;
+	height: 2px;
+	background: #B3B3B3;
+}
+
+.poubelle{
+	position: absolute;
+	top:6px;
+	right:6px;
+	width: 17px;
+	height: 17px; 
+	background-color: #000;
+	border-radius: 3px; 
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.move{
+	position: absolute;
+	top:6px;
+	right: 25px;
+	width: 17px;
+	height: 17px; 
+	background-color: #000;
+	border-radius: 3px; 
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	text-align: center;
+}
+
+.move i{
+	padding-left: 7px;
+}
+
+#ajouter{
+	width: 237px;
+	height: 36px;
+	border-radius: 60px;
+	background: #1D6154; 
+	color: #FFF;
+	text-align: center;
+	font-family: Syne;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal; 
+	border: none;
+	cursor: pointer;
+
+}
+
+.boutons{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#del_all{
+	margin-top: 30px;
+	margin-bottom: 40px;
+	color: #D65353;
+	text-align: center;
+	font-family: Syne;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	outline: inherit;
+}
+
+#ajout_form{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.ajout{
+	display: flex;
+	flex-direction: column;
+	gap:10px;
+	align-items: center;
+	justify-content: center;
+	border-radius: 3px;
+	background: #E8F1F6; 
+	width: 420px;
+	height: 170px; 
+}
+
+.ajout i{
+	font-size: 76px;
+	width: 76px;
+	height: 76px; 
+	line-height: 1;
+}
+
+.texts{
+	display:flex;
+	flex-direction: column;
+	margin-top: 30px;
+	gap: 10px;
+}
+
+.texts input{
+	width: 420px;
+	height: 50px; 
+}
+
+form .line{
+	margin-bottom:40px;
+}
+
+form input{
+	font-size: 20px;
+}
+
+#valider{
+	border-radius: 60px;
+	border:none;
+	width: 237px;
+	height: 36px; 
+	background: #A7A7A7; 
+	color: #FFF;
+	text-align: center;
+	font-family: Syne;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal; 
+	margin-bottom:30px;
+}
+
+
+#btn_ajout{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor:pointer;
+	border:none;
+	width: 170px;
+	height: 35px; 
+	border-radius: 50px;
+	background: #CBD6DC; 
+	color: #306685;
+	text-align: center;
+	font-family: Work Sans;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal; 
+}
+
+input[type="file"] {
+    display: none;
+}
+
+#catégorie{
+	width: 420px;
+	height: 50px;
+	background: #FFF;
+	box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+	border: none;
+	color: #000;
+ 
+}
+
+#upload_img{
+	display : none;
+	object-fit: contain;
+	height: 170px; 
 }

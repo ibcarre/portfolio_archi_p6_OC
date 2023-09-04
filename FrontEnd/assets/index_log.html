@@ -23,14 +23,14 @@
 		<ul>
 			<li>projets</li>
 			<li>contact</li>
-			<li><a href="./login.html">login</a></li>
+			<li><a href="./login.html">logout</a></li>
 			<li><img src="./icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
 </header>
 <main>
 	<section id="introduction">
-		<figure>
+		<figure class ="pdp">
 			<img src="./images/sophie-bluel.png" alt="">
 		</figure>
 		<article>
@@ -41,52 +41,50 @@
 		</article>
 	</section>
 	<section id="portfolio">
-		<h2>Mes Projets <i class="fa-regular fa-pen-to-square fa-2xs" style="color: #000000;"></i></h2>
-		<div class="gallery">
-			<!-- <figure>
-				<img src="assets/images/abajour-tahina.png" alt="Abajour Tahina">
-				<figcaption>Abajour Tahina</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-v.png" alt="Appartement Paris V">
-				<figcaption>Appartement Paris V</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/restaurant-sushisen-londres.png" alt="Restaurant Sushisen - Londres">
-				<figcaption>Restaurant Sushisen - Londres</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/la-balisiere.png" alt="Villa “La Balisiere” - Port Louis">
-				<figcaption>Villa “La Balisiere” - Port Louis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/structures-thermopolis.png" alt="Structures Thermopolis">
-				<figcaption>Structures Thermopolis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-x.png" alt="Appartement Paris X">
-				<figcaption>Appartement Paris X</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/le-coteau-cassis.png" alt="Pavillon “Le coteau” - Cassis">
-				<figcaption>Pavillon “Le coteau” - Cassis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/villa-ferneze.png" alt="Villa Ferneze - Isola d’Elba">
-				<figcaption>Villa Ferneze - Isola d’Elba</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-xviii.png" alt="Appartement Paris XVIII">
-				<figcaption>Appartement Paris XVIII</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/bar-lullaby-paris.png" alt="Bar “Lullaby” - Paris">
-				<figcaption>Bar “Lullaby” - Paris</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/hotel-first-arte-new-delhi.png" alt="Hotel First Arte - New Delhi">
-				<figcaption>Hotel First Arte - New Delhi</figcaption>
-			</figure> -->
+		<h2>Mes Projets <div id="modifier"><i class="fa-regular fa-pen-to-square fa-2xs" style="color: #000000;"></i><span class = "modifier_txt">modifier</span></div></h2>
+		<div id="myModal" class="modal">
+		<div class="modal-content">
+	  	<span class="close">&times;</span>
+	  	<h1 class="modal-title">Galerie photo</h1>
+		<div id="travaux">
+			<div id = "galerie"></div>
+			<div class ="line"></div>
+		</div>
+		<div class ="boutons">
+		<button id="ajouter">Ajout photo</button>
+		<button id="del_all">Supprimer la galerie</button>
+	</div>
+		</div>
+ 		 </div>
+		  <div id="Modalajout" class="modal">
+			<div class="modal-content">
+			  <span class="close">&times;</span>
+			  <h1 class="modal-title">Galerie photo</h1>
+				<form id="ajout_form">
+					<div class = "ajout">
+						<i class="fa-regular fa-image fa-2xl" style="color: #c3c5cc;" id="icone"></i>
+						<label id = "btn_ajout">
+							<input required type="file" id ="upload" accept="image/*"/>
+							<img id="upload_img" src="#" alt="Image ajoutée" />
+							<span id ="ajouterphoto">+ Ajouter photo</span>
+						</label>
+						
+						<p id = "file_txt">jpg, png : 4mo max</p>
+					</div>
+					<div class = "texts">
+					<label for="titre">Titre</label>
+					<input required type="text" name="titre" id="titre">
+					<label for="categorie">Catégorie</label>
+					<select id = "catégorie" required name ="Catégorie">
+						<option  style="color:#868686;" disabled selected hidden value="">Choisissez une catégorie</option>
+					</select>
+					</div>
+					<div class ="line"></div>
+					<button type = "submit" id="valider">Valider</button>
+				</form>
+			</div>
+			  </div>
+		<div class="gallery" style="margin-top:90px;">
 		</div>
 	</section>
 	<section id="contact">

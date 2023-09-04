@@ -9,7 +9,7 @@ module.exports = (req, res, next) => {
 		if(title !== undefined &&
 			title.length > 0 &&
 			categoryId !== undefined &&
-			categoryId > 0 &&
+			categoryId >= 0 &&
 			userId !== undefined &&
 			userId > 0 &&
 			imageUrl !== undefined){

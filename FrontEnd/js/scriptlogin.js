@@ -1,3 +1,8 @@
+if (document.cookie.length != 0){
+    document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}
+
+
 btn = document.getElementById("form_co");
 btn.addEventListener("submit", async function(event) {
     event.preventDefault(); 
@@ -19,9 +24,14 @@ btn.addEventListener("submit", async function(event) {
         console.log("success");
         response = await response.json();
         console.log(response);
-        document.cookie = "token=" + response["token"] + ";path=/; SameSite=Lax";
+        var now = new Date();
+        now.setDate(now.getDate() + 1);
+        document.cookie = "token=" + response["token"] + " ; expires="+now.toUTCString() + ";path=/; SameSite=Lax";
         console.log(document.cookie)
         document.location.href="../assets/index_log.html";
+    }
+    else{
+        alert("Mauvais mot de passe/identifiant")
     }
 
 });
