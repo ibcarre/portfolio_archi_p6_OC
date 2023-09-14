@@ -2,9 +2,12 @@ if (document.cookie.length == 0){
     document.location.href="../index.html";
 }
 
+var doonce = 0;
+
 const categories_set = new Set();
 parent = document.querySelector(".gallery");
 function trouver(parent){
+  parent.innerHTML="";
     fetch('http://localhost:5678/api/works')
         .then(response => response.json())
         .then(works => {
@@ -52,12 +55,21 @@ window.onclick = function(event) {
 btn_ajout.onclick = function(){
     modal.style.display = "none";
     modalajout.style.display = "block";
-    add_categories();
+    document.getElementById("upload_img").src ="#";
+    document.getElementById("upload_img").alt ="";
+    modalajout.style.display = "block";
+    document.getElementById("file_txt").style.display = "block";
+    document.getElementById("ajouterphoto").innerHTML = "+ Ajouter photo";
+    document.getElementById("icone").style.display = "block";
+    if(doonce === 0){
+      add_categories();
+    }
 }
 
 
 var parentbis = document.getElementById("galerie");
 function trouverbis(parentbis){
+    parentbis.innerHTML="";
     fetch('http://localhost:5678/api/works')
         .then(response => response.json())
         .then(works => {
@@ -114,10 +126,10 @@ function getCookie() {
 
 
 function add_categories(){
+    doonce = 1; 
     filtreArray = Array.from(categories_set);
     var categories = document.getElementById("catégorie");
     for (var i = 0; i < filtreArray.length; i++){
-        console.log(i);
         var option = document.createElement("option");
         categories.appendChild(option)
         option.setAttribute("id", filtreArray[i]);
@@ -128,12 +140,15 @@ function add_categories(){
 
 
 document.getElementById("ajout_form").addEventListener("submit", function(event) {
+  event.preventDefault();
     userToken = getCookie();
     filtreArray = Array.from(categories_set);
-    console.log(userToken);
-    event.preventDefault();
     var formData = new FormData();
-    formData.append("image", document.getElementById("upload").files[0]);
+    var uploadedFile = document.getElementById("upload").files[0];
+    if (uploadedFile) {
+      formData.append("image", uploadedFile, uploadedFile.name);
+  }
+    console.log(document.getElementById("upload").files[0]);
     formData.append("title", document.getElementById("titre").value);
     formData.append("category", filtreArray.indexOf(document.getElementById("catégorie").value));
     fetch("http://localhost:5678/api/works", {
@@ -141,14 +156,24 @@ document.getElementById("ajout_form").addEventListener("submit", function(event)
       body: formData,
       headers: {
         "Authorization": 'Bearer ' + userToken,
-        "Content-Type": "application/json"
       }
     })
     .then(response => response.json())
-    .then(console.log(document.getElementById("upload").files[0]))
-    .then(console.log(document.getElementById("titre").value))
-    .then(console.log(document.getElementById("catégorie").value))
-
+    .then(data => {
+      if(Object.keys(data)[0] == "error"){
+        document.getElementById("ajout_form").reset();
+        modalajout.style.display = "none";
+        alert("Une erreur s'est produite. Veuillez réessayer l'opération");
+      }
+      else{
+        document.getElementById("ajout_form").reset();
+        parent = document.querySelector(".gallery");
+        trouver(parent);
+        parentbis = document.getElementById("galerie");
+        trouverbis(parentbis);
+        modalajout.style.display = "none";
+      }
+    })
   });
 
 imgs = document.getElementById("upload");
